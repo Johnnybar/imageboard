@@ -3,7 +3,7 @@ angular.module('app.routes', ['ui.router'])
     .config(function($stateProvider){
         $stateProvider
             .state('home',{
-                url: '/',
+                url: '/home',
                 views: {
                     'main': {
                         templateUrl: 'views/main.html'
@@ -17,9 +17,19 @@ angular.module('app.routes', ['ui.router'])
                     'main': {
                         templateUrl: 'views/about.html'
                     },
-                    '@about': {
-                        template: '<p>I targeted the unnamed view in about.html</p>'
-                    }
+                }
+            })
+
+            .state('singleImg',{
+                url: '/singleImg/:imgId',
+                views: {
+                    'main': {
+                        templateUrl: 'views/templates/imgView.html',
+                        controller: function ($stateParams) {
+                            console.log($stateParams);
+                            return $stateParams;
+                        }
+                    },
                 }
             });
     });

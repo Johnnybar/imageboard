@@ -1,9 +1,14 @@
 #wrapper{
     display: flex;
+    flex-wrap: wrap;
 
 }
 
 .img{
-    width: 100px;
-    height: 100px
+    width: 200px;
+    margin: 10px
+}
+
+ul {
+    list-style: none;
 }

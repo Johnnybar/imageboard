@@ -45,11 +45,20 @@ app.post('/upload', uploader.single('file'), function(req,res,next){
     if(req.file){
         s3.upload(req.file).then(function(){
             db.insertImages(req.file.filename, req.body.user, req.body.title, req.body.desc);
-            next();
+            // next();
         });
     }
 });
-
+app.get('/singleImg/:id', (req,res)=>{
+    const id = req.params.id;
+    db.getImageById(id)
+        .then((results)=>{
+            console.log('these are the results: ',results);
+            res.json(results);
+        }).catch((err)=>{
+            console.log(err);
+        });
+});
 
 app.get('/images', (req, res) => {
     db.getImageUrls().then(results => {
@@ -60,6 +69,7 @@ app.get('/images', (req, res) => {
 app.get('*', (req,res)=>{
     res.sendFile(__dirname+ '/public/views/index.html');
 });
+
 
 //__________LISTEN
 app.listen(process.env.PORT || 8080, ()=> (console.log('listening on port 8080')));

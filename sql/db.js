@@ -31,3 +31,12 @@ exports.insertImages = function(image, username, title, description) {
         console.log(err);
     });
 };
+
+exports.getImageById = function(id){
+    return db.query(
+        `SELECT * from images where id = $1`, [id])
+        .then((results)=>{
+            return results.rows;
+        });
+
+};
