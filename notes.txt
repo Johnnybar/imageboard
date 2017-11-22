@@ -1,0 +1,13 @@
+READ ABOUT FOREIGN KEY and MVC
+
+
+start with home screen and make request to get images.
+run the db sql to get our table
+index html makes an ajax request to out server which makes a db query that retrieves images from the database
+and shows them on the client side
+get the 3 images on the screen
+
+
+CDN - content distribution network
+it distributes your static files all over the world
+you have to tell your cdn where to pick up your assets that you want it to serve
