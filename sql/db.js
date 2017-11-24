@@ -40,3 +40,26 @@ exports.getImageById = function(id){
         });
 
 };
+
+exports.insertComments = function(username, comment, imageId) {
+    return db.query(
+        'INSERT INTO comments (username, comment, imageId) VALUES ($1, $2, $3)',
+        [username, comment, imageId]
+    ).then((results) => {
+        return results.rows[0];
+    }).catch((err) => {
+        console.log(err);
+    });
+};
+
+exports.getComments = function(imageId) {
+    return db.query(`SELECT * from COMMENTS
+    where imageId = $1
+    ORDER BY created_at DESC`,
+        [imageId])
+        .then(function(results) {
+            return results.rows;
+        }).catch(function(err) {
+            console.log(err);
+        });
+};

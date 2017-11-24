@@ -1,13 +1,27 @@
-
 <div ng-controller='photos'>
 
-
-<h1>This is where the image goes!</h1>
-
-<!-- <h1>"{{clickedImg.image}}"</h1> -->
-
+<h1>Behold, an image!</h1>
 
 <img alt = 'clicked image' src=https://s3.amazonaws.com/johnnybar/{{clickedImg.image}}>
-<!--
-<img class='img' src="https://s3.amazonaws.com/johnnybar/{{images.clickedImg}}"> -->
+<p>{{clickedImg.title}}</p>
+<p>{{clickedImg.description}}</p>
+</div>
+
+<div ng-controller='comments'>
+
+    <form method="post" ng-submit="submitComment()">
+        <input ng-model="username" type="text" name="user" placeholder="Username">
+        <input ng-model="comment" type="text" name="comment" placeholder="Comment">
+        <button type="submit" name="button">Comment</button>
+    </form>
+
+
+    <div id="comment-section" ng-repeat='comment in comments | limitTo:limit'>
+        <p>{{comment.username}} left a comment:</p>
+        <h3>{{comment.comment}}</h3>
+
+
+
+    </div>
+    <button type="button" name="button" ng-click = 'limitUpComments()' id='moreComments'>More</button>
 </div>
