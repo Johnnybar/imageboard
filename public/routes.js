@@ -11,14 +11,6 @@ angular.module('app.routes', ['ui.router'])
                 }
             })
 
-            .state('about',{
-                url: '/about',
-                views: {
-                    'main': {
-                        templateUrl: 'views/about.html'
-                    },
-                }
-            })
 
             .state('singleImg',{
                 url: '/singleImg/:imgId',

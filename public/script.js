@@ -1,9 +1,7 @@
-// var more = $("#more");
-
-var imageboard = angular.module('imageboard', ["app.routes", "ui.router"]);
+var imageboard = angular.module('imageboard', ["app.routes", "ui.router", 'app.nav']);
+location.hash = '/home';
 
 //__________DISPLAY THE IMAGES
-
 
 imageboard.controller('images', ($scope, $http, $window) => {
     getImages();
