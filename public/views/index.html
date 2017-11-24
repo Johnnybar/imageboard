@@ -4,10 +4,6 @@
 <head>
     <meta charset="utf-8">
     <title>Image Board</title>
-    <!-- <script type="text/javascript"> function goBack()
-     {  window.history.back();
-         setTimeout(function(){location.reload()}, 100)
-    }</script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="nav.directive.js"></script>
@@ -20,19 +16,21 @@
 
 <body ng-app="imageboard">
     <gt-nav></gt-nav>
-
+<h1 id='logo'>Image<span class='styleChange btn'>board</span></h1>
     <div ng-controller="images">
-                <!-- <button onclick="goBack()" >Back</button> -->
-        <form method="post" ng-submit="submit()" id='fileInpForm'>
-            <input ng-model="file" type="file" name="file">
+        <div id="inputWrapper">
+        <form class='fileInpForm' method="post" ng-submit="submit()" >
+            <input ng-model="file" type="file" name="file" id='file' style="visibility:hidden;">
+            <label for="file" class='btn'>Select Image</label>
             <input ng-model="title" type="text" name="title" placeholder="Title">
             <input ng-model="user" type="text" name="user" placeholder="User">
             <input ng-model='desc' type="text" name="desc" placeholder="Description">
-            <button type="submit" name="button">Upload</button>
+            <button type="submit" name="button" class= 'btn'>Upload</button>
         </form>
+        </div>
 
 
-    <h3>Here are the images:</h3>
+
 <div ui-view="main">
 </div>
 </div>

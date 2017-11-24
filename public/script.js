@@ -12,9 +12,9 @@ imageboard.controller('images', ($scope, $http, $window) => {
             //the references to the images we got from the db) that is currently being sent to
             // '/images' and adds it to the scope
             $scope.images = resp.data;
-            $scope.limit = 4;
+            $scope.limit = 8;
             $scope.limitUp = function(){
-                $scope.limit +=4;
+                $scope.limit +=8;
             };
             $scope.title = '';
             $scope.user = '';
@@ -56,7 +56,7 @@ imageboard.controller('photos', ($scope, $http, $location)=>{
 
 imageboard.controller('comments', ($scope, $http, $stateParams, $location, $window)=>{
 
-    $scope.limit =4;
+    $scope.limit = 4;
     $scope.limitUpComments = function(){
         $scope.limit +=4;
     };

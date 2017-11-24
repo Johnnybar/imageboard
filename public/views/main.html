@@ -1,12 +1,12 @@
 <div id="container">
     <ul id ='wrapper' ng-if="images.length > 0" >
-        <li ng-repeat="image in images | limitTo:limit"><a ui-sref='singleImg({ imgId: {{image.id}}})'><img class='img' src="{{image.image}}"></a>
+        <div ng-repeat="image in images | limitTo:limit" class='imgBox'><a ui-sref='singleImg({ imgId: {{image.id}}})'><img class='img' src="{{image.image}}"></a>
         <div>
             <h4>User: {{image.username}}</h4>
             <h4>Title: {{image.title}}</h4>
             <h4>Description: {{image.description | limitTo: 20}}</h4>
         </div>
-        </li>
+    </div>
 
     </ul>
     <button type="button" id ='more' ng-click='limitUp()'>More</button>
