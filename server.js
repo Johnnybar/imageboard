@@ -48,9 +48,9 @@ app.post('/upload', uploader.single('file'), function(req,res,next){
             return db.insertImages(req.file.filename, req.body.user, req.body.title, req.body.desc);
             // next();
         }).then(function(){
-            res.json({success:true});
+            res.json({ success:true });
         }).catch(function(){
-            res.json({success:false});
+            res.json({ success:false });
         });
     }
 });
@@ -59,7 +59,6 @@ app.get('/singleImg/:id', (req,res)=>{
     const id = req.params.id;
     db.getImageById(id)
         .then((results)=>{
-            console.log('these are the results: ',results);
             res.json(results);
         }).catch((err)=>{
             console.log(err);

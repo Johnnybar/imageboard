@@ -3,7 +3,7 @@ location.hash = '/home';
 
 //__________DISPLAY THE IMAGES
 
-imageboard.controller('images', ($scope, $http, $window) => {
+imageboard.controller('images', ($scope, $http) => {
     getImages();
     $scope.message = 'Here are the images:';
 
@@ -12,9 +12,9 @@ imageboard.controller('images', ($scope, $http, $window) => {
             //the references to the images we got from the db) that is currently being sent to
             // '/images' and adds it to the scope
             $scope.images = resp.data;
-            $scope.limit = 8;
+            $scope.limit = 10;
             $scope.limitUp = function(){
-                $scope.limit +=8;
+                $scope.limit +=10;
             };
             $scope.title = '';
             $scope.user = '';
@@ -54,7 +54,7 @@ imageboard.controller('photos', ($scope, $http, $location)=>{
     });
 });
 
-imageboard.controller('comments', ($scope, $http, $stateParams, $location, $window)=>{
+imageboard.controller('comments', ($scope, $http, $stateParams, $location)=>{
 
     $scope.limit = 4;
     $scope.limitUpComments = function(){
@@ -73,11 +73,15 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location, $wind
                 username:username},
         })
             .then(() => {
-                $window.location.reload();
+                getComments();
             });
     };
-    $http.get("/comment/"+ $location.path().split('/').pop()).then(function(resp) {
-        $scope.comments = resp.data;
 
-    });
+    function getComments(){
+        $http.get("/comment/"+ $location.path().split('/').pop()).then(function(resp) {
+            $scope.comments = resp.data;
+        });
+    }
+    getComments();
+
 });

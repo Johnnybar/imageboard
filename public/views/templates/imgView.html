@@ -1,25 +1,27 @@
-<div ng-controller='photos'>
+<div ng-controller='photos' class='commentsUp'>
 
 <h1>Behold, an image!</h1>
 
-<img alt = 'clicked image' src=https://s3.amazonaws.com/johnnybar/{{clickedImg.image}}>
-<p>{{clickedImg.title}}</p>
-<p>{{clickedImg.description}}</p>
+<img alt = 'clicked image' src=https://s3.amazonaws.com/johnnybar/{{clickedImg.image}} >
+<div id="titleAndDesc">
+<h4>{{clickedImg.title}}</h4>
+<h4>{{clickedImg.description}}</h4>
+</div>
 </div>
 
-<div ng-controller='comments'>
+<div ng-controller='comments' class='commentsDown'>
 
     <form method="post" ng-submit="submitComment()">
-        <input ng-model="username" type="text" name="user" placeholder="Username">
+        <input ng-model="username" type="text" name="user" placeholder="Name">
         <input ng-model="comment" type="text" name="comment" placeholder="Comment">
-        <button type="submit" name="button">Comment</button>
+        <button type="submit" name="button" class='btn'>Submit Comment</button>
     </form>
 
 
     <div id="comment-section" ng-repeat='comment in comments | limitTo:limit'>
-        <p>{{comment.username}} left a comment:</p>
-        <h3>{{comment.comment}}</h3>
+        <h5 class='actualCommenter'><span class='commenterName'>{{comment.username}}</span> left a comment:</h5>
+        <h5 class='actualComment'>{{comment.comment}}</h5>
 
     </div>
-    <button type="button" name="button" ng-click = 'limitUpComments()' id='moreComments'>More</button>
+    <button type="button" name="button" ng-click = 'limitUpComments()' id='moreComments' class='btn'>More</button>
 </div>
