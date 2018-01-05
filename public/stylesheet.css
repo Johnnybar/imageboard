@@ -41,7 +41,7 @@ body{
 }
 
 .imgBox:hover {
-    animation: colorChange 0.5s ease-in;
+    animation: colorChange 0.5s ease-in forwards;
 }
 
 
