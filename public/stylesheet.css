@@ -1,3 +1,13 @@
+@-webkit-keyframes colorChange {
+    0% {
+
+    }
+    100% {
+        background-color: indianred;
+        color:white;
+     }
+}
+
 body{
     font-family: 'Avenir','Lucida Sans Unicode',serif;
     font-style: italic;
@@ -28,6 +38,10 @@ body{
     background-color: floralwhite;
     margin-bottom: 20px;
     margin-right: -15px;
+}
+
+.imgBox:hover {
+    animation: colorChange 0.5s ease-in;
 }
 
 
@@ -107,7 +121,7 @@ width: 50%
 .actualComment{
 
     background-color: floralwhite;
-        padding: 5px;
+    padding: 5px;
 }
 
 .actualCommenter{
