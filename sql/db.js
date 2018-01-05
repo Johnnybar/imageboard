@@ -1,11 +1,18 @@
 // REQUIRE AND SET UP SPICEDPG
-const spicedPg = require("spiced-pg");
-const secret = require("../secrets.json");
 const s3 = require("../config.json");
+var spicedPg = require('spiced-pg');
+let dbUrl;
 
-const user = secret.username;
-const pass = secret.password;
-var db = spicedPg(`postgres:${user}:${pass}psql@localhost:5432/imageboard`);
+if (process.env.DATABASE_URL){
+    dbUrl = process.env.DATABASE_URL;
+}
+else{
+    var userInfo = require('./secrets.json');
+    var user = userInfo.username;
+    var pass = userInfo.password;
+    dbUrl = `postgres:${user}:${pass}psql@localhost:5432/imageboard`;
+}
+var db = spicedPg(dbUrl);
 
 exports.getImageUrls = function() {
     return db.query(
