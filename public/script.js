@@ -24,33 +24,34 @@ imageboard.controller('images', ($scope, $http) => {
     }
 
     $scope.submit = function(){
-        var file = $('input[type="file"]').get(0).files[0];
-        var title = $scope.title;
-        var user = $scope.user;
-        var desc = $scope.desc;
+        console.log('Pic submit is disabled for demo version');
+        // var file = $('input[type="file"]').get(0).files[0];
+        // var title = $scope.title;
+        // var user = $scope.user;
+        // var desc = $scope.desc;
+        //
+        // var formData = new FormData();
+        // formData.append('file', file);
+        // formData.append('title', title);
+        // formData.append('user', user);
+        // formData.append('desc', desc);
 
-        var formData = new FormData();
-        formData.append('file', file);
-        formData.append('title', title);
-        formData.append('user', user);
-        formData.append('desc', desc);
-
-        $http({
-            url: '/upload',
-            method: 'POST',
-            data: formData,
-            headers: { 'Content-Type': undefined },
-            transformRequest: angular.identity
-        }).then(() => {
-            getImages();
-        });
+        // $http({
+        //     url: '/upload',
+        //     method: 'POST',
+        //     data: formData,
+        //     headers: { 'Content-Type': undefined },
+        //     transformRequest: angular.identity
+        // }).then(() => {
+        //     getImages();
+        // });
     };
 });
 
 imageboard.controller('photos', ($scope, $http, $location)=>{
     $http.get('/singleImg/'+ $location.path().split('/').pop()).then((resp)=>{
         $scope.clickedImg = resp.data[0];
-        console.log($scope.clickedImg);
+        // console.log($scope.clickedImg);
     });
 });
 
@@ -62,19 +63,20 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location)=>{
     };
 
     $scope.submitComment = function(){
-        var username = $scope.username;
-        var comment = $scope.comment;
-        console.log('these are the username and comment ',comment, username);
-
-        $http({
-            url: '/comment/'+ $stateParams.imgId,
-            method: 'POST',
-            data: {comment:comment,
-                username:username},
-        })
-            .then(() => {
-                getComments();
-            });
+        console.log('Comment submit disabled for demo version');
+        // var username = $scope.username;
+        // var comment = $scope.comment;
+        // // console.log('these are the username and comment ',comment, username);
+        //
+        // $http({
+        //     url: '/comment/'+ $stateParams.imgId,
+        //     method: 'POST',
+        //     data: {comment:comment,
+        //         username:username},
+        // })
+        //     .then(() => {
+        //         getComments();
+        //     });
     };
 
     function getComments(){

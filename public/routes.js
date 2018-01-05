@@ -18,7 +18,7 @@ angular.module('app.routes', ['ui.router'])
                     'main': {
                         templateUrl: 'views/templates/imgView.html',
                         controller: function ($stateParams) {
-                            console.log($stateParams);
+                            // console.log($stateParams);
                             return $stateParams;
                         }
                     },
