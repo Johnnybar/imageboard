@@ -1,6 +1,6 @@
 <div id="container">
     <ul id ='wrapper' ng-if="images.length > 0" >
-        <div ng-repeat="image in images | limitTo:limit" class='imgBox'><a ui-sref='singleImg({ imgId: {{image.id}}})'><img class='img' src="{{image.image}}"></a>
+        <div ng-repeat="image in images | limitTo:limit" class='imgBox'><a ui-sref='singleImg({ imgId: {{image.id}}})'><img draggable="true" class='img' src="{{image.image}}"></a>
         <div class='descBox'>
             <h5 style='font-weight: lighter'>Submitted By: {{image.username}}</h5>
             <h4 style='font-weight: bold'>{{image.title}}</h4>
