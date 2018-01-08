@@ -4,13 +4,11 @@ let secrets;
 if (process.env.NODE_ENV == 'production') {
     secrets = process.env; // in prod the secrets are environment variables
 } else {
-    secrets = require('./secrets');
+    secrets = require('./secrets.json');
 }
 const client = knox.createClient({
-    // key: secrets.AWS_KEY,
-    key: process.env.KEY1,
-    secret: process.env.SECRET,
-    // secret: secrets.AWS_SECRET,
+    key: process.env.KEY1 || secrets.AWS_KEY,
+    secret: process.env.SECRET || secrets.AWS_SECRET,
     bucket: 'johnnybar'
 });
 

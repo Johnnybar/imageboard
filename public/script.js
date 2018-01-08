@@ -25,6 +25,7 @@ imageboard.controller('images', ($scope, $http) => {
 
     $scope.submit = function(){
         console.log('Pic submit is disabled for demo version');
+        alert('Pic submit disabled in demo mode', 'ok');
         // var file = $('input[type="file"]').get(0).files[0];
         // var title = $scope.title;
         // var user = $scope.user;
@@ -64,6 +65,7 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location)=>{
 
     $scope.submitComment = function(){
         console.log('Comment submit disabled for demo version');
+        alert('Comment submit disabled in demo mode', 'ok');
         // var username = $scope.username;
         // var comment = $scope.comment;
         // // console.log('these are the username and comment ',comment, username);

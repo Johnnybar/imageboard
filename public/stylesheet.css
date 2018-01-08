@@ -1,12 +1,33 @@
-@-webkit-keyframes colorChange {
-    0% {
+
+
+@-webkit-keyframes lightUp  {
+    0%  {
+      background-color: floralwhite;
+      border: 1px solid transparent;
+
 
     }
-    100% {
+
+    100%{
         background-color: indianred;
-        color:white;
-     }
+        border: 1px solid black;
+        box-shadow: 6 1px 14px 0px black;
+        color:floralwhite
+    }
+
 }
+
+@-webkit-keyframes grow {
+    0% {
+        max-width: 10vw;
+    }
+
+    100% {
+        max-width: 100%;
+        height: auto
+    }
+}
+
 
 body{
     font-family: 'Avenir','Lucida Sans Unicode',serif;
@@ -14,6 +35,139 @@ body{
     background-color: salmon;
     width: 100%;
     margin: 0;
+}
+
+#wrapper{
+    display: flex;
+    flex-wrap: wrap;
+        align-items: end;
+
+}
+
+.img{
+    width: 150px;
+    margin: 10px;
+    border-radius: 40px;
+    border: 1px solid black;
+}
+
+.imgBox {
+    padding: 12px;
+    display: flex;
+    width: 180px;
+    flex-direction: column;
+    border-radius: 45px;
+    box-shadow: 0 1px 14px 0px brown;
+    background-color: floralwhite;
+    margin-bottom: 20px;
+    margin-right: -15px;
+}
+
+.imgBox:hover{
+    animation: lightUp 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: transparent;
+
+}
+a:visited{
+    color:transparent;
+}
+
+.btn {
+
+    text-indent: 5px;
+    border-radius: 15px;
+    color: transparent;
+    text-shadow: -4px 1px 4px rgba(7, 0, 11,1);
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    font-family: 'Avenir';
+    font-style: normal;
+    background-color: salmon;
+
+    margin-top: 5px;
+}
+#logo{
+    text-align: center;
+    font-family: 'Pacifico';
+    padding: 5px;
+    background-color: indianred;
+
+}
+
+.styleChange{
+    font-family: 'Avenir';
+        background-color: indianred;
+        font-style: normal;
+        margin-left: -1px
+}
+
+.imageLogoText{
+    color:floralwhite;
+}
+
+.fileInpForm{
+    width: 80%;
+}
+
+.inputWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#titleAndDesc{
+    background-color: indianred;
+    width: 50%;
+        color: floralwhite;
+}
+
+.actualImage{
+    animation: grow 2s ease-in-out;
+}
+
+.commentsUp{
+margin-left: 20px
+}
+.commentsDown{
+margin-left: 20px;
+width: 50%
+}
+#comment-section{
+
+}
+.actualComment{
+
+    background-color: floralwhite;
+        padding: 5px;
+}
+
+.actualCommenter{
+color: floralwhite;
+font-weight: lighter;
+    padding: 5px;
+}
+.commenterName{
+    background-color: black
+}
+
+input{
+    width: 8em;
+height: 1em;
+}
+
+form{
+    width: 65%
 }
 
 #wrapper{
