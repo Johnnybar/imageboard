@@ -27,10 +27,18 @@
         height: auto
     }
 }
-
+@font-face {
+font-family: Avenir;
+src: url(/System/Library/Fonts/Avenir.ttc) format('TrueType Collection');
+src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
+     url(/System/Library/Fonts/Avenir.woff2) format('woff2'); /* Super Modern Browsers */
+     url(/System/Library/Fonts/Avenir.woff) format('woff'); /* Pretty Modern Browsers */
+     url(/System/Library/Fonts/Avenir.ttf)  format('truetype'); /* Safari, Android, iOS */
+     url(/System/Library/Fonts/Avenir.svg#svgFontName) format('svg');
+}
 
 body{
-    font-family: 'Avenir','Lucida Sans Unicode',serif;
+    font-family: Avenir,'Lucida Sans Unicode',serif;
     font-style: italic;
     background-color: salmon;
     width: 100%;
