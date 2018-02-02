@@ -38,7 +38,7 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
 }
 @font-face {
 font-family: Pacifico;
-src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('TrueType Collection');
+src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('truetype');
 src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype');
      url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2'); /* Super Modern Browsers */
      url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff'); /* Pretty Modern Browsers */
