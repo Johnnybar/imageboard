@@ -39,7 +39,7 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
 @font-face {
 font-family: Pacifico;
 src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('truetype');
-src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype'); 
+src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype');
      url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2');
      url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff');
      url(/System/Library/Fonts/Pacifico-Regular.ttf)  format('truetype');
@@ -117,6 +117,7 @@ a:visited{
 
 .imageLogoText{
     color:floralwhite;
+    font-family: Pacifico;
 }
 
 .fileInpForm{
