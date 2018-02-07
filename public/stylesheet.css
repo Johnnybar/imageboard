@@ -39,11 +39,11 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
 @font-face {
 font-family: Pacifico;
 src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('truetype');
-/* src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype'); */
-     /* url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2');
+src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype'); 
+     url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2');
      url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff');
      url(/System/Library/Fonts/Pacifico-Regular.ttf)  format('truetype');
-     url(/System/Library/Fonts/Pacifico-Regular.svg#svgFontName) format('svg'); */
+     url(/System/Library/Fonts/Pacifico-Regular.svg#svgFontName) format('svg');
 }
 
 body{
@@ -225,13 +225,7 @@ text-shadow: 2px 1px 5px rgba(7, 0, 11,1);
     margin-top: 5px;
 }
 
-#logo{
-    text-align: center;
-    font-family: Pacifico;
-    padding: 5px;
-    background-color: indianred;
 
-}
 
 .styleChange{
     font-family: Avenir;
