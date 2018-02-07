@@ -36,11 +36,7 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
      url(/System/Library/Fonts/Avenir.ttf)  format('truetype'); /* Safari, Android, iOS */
      url(/System/Library/Fonts/Avenir.svg#svgFontName) format('svg');
 }
-@font-face {
-font-family: Pacifico;
-src: url(/System/Library/Fonts/Pacifico-Regular.ttf) 
 
-}
 
 body{
     font-family: Avenir,'Lucida Sans Unicode',serif;
@@ -98,7 +94,7 @@ a:visited{
 
 #logo{
     text-align: center;
-    font-family: Pacifico;
+    font-family: 'Pacifico', cursive;
     padding: 5px;
     background-color: indianred;
 
@@ -113,7 +109,7 @@ a:visited{
 
 .imageLogoText{
     color:floralwhite;
-    font-family: Pacifico, "Helvetica";
+    font-family: 'Pacifico', cursive;
 }
 
 .fileInpForm{
