@@ -40,7 +40,7 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
 font-family: Pacifico;
 src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('truetype');
 src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype');
-     /* url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2'); 
+     /* url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2');
      url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff');
      url(/System/Library/Fonts/Pacifico-Regular.ttf)  format('truetype');
      url(/System/Library/Fonts/Pacifico-Regular.svg#svgFontName) format('svg'); */
@@ -92,11 +92,11 @@ ul {
 
 a{
     text-decoration: none;
-    color: transparent;
+    color: white;
 
 }
 a:visited{
-    color:transparent;
+    color:white;
 }
 
 
@@ -205,21 +205,15 @@ ul {
     list-style: none;
 }
 
-a{
-    text-decoration: none;
-    color: transparent;
-
-}
-a:visited{
-    color:transparent;
-}
 
 .btn {
 
     text-indent: 5px;
     border-radius: 15px;
-    color: transparent;
-    text-shadow: -4px 1px 3px rgba(7, 0, 11,1);
+
+    color: floralwhite;
+text-shadow: 2px 1px 5px rgba(7, 0, 11,1);
+
     text-decoration: none;
     font-size: 1.2em;
     cursor: pointer;
