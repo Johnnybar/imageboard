@@ -112,9 +112,7 @@ a:visited{
     font-family: 'Pacifico';
 }
 
-.fileInpForm{
-    width: 80%;
-}
+
 
 .inputWrapper{
     display: flex;
@@ -162,7 +160,7 @@ height: 1em;
 }
 
 form{
-    width: 65%
+    width: 50%
 }
 
 #wrapper{
@@ -229,11 +227,7 @@ ul {
     width: 80%;
 }
 
-.inputWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 #titleAndDesc{
     background-color: indianred;
     width: 50%;
@@ -268,8 +262,4 @@ font-weight: lighter;
 input{
     width: 8em;
 height: 1em;
-}
-
-form{
-    width: 65%
 }
