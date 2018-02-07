@@ -40,16 +40,16 @@ src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
 font-family: Pacifico;
 src: url(/System/Library/Fonts/Pacifico-Regular.ttf) format('truetype');
 src: url(/System/Library/Fonts/Pacifico-Regular.eot?#iefix) format('embedded-opentype');
-     url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2'); /* Super Modern Browsers */
-     url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff'); /* Pretty Modern Browsers */
-     url(/System/Library/Fonts/Pacifico-Regular.ttf)  format('truetype'); /* Safari, Android, iOS */
-     url(/System/Library/Fonts/Pacifico-Regular.svg#svgFontName) format('svg');
+     /* url(/System/Library/Fonts/Pacifico-Regular.woff2) format('woff2'); 
+     url(/System/Library/Fonts/Pacifico-Regular.woff) format('woff');
+     url(/System/Library/Fonts/Pacifico-Regular.ttf)  format('truetype');
+     url(/System/Library/Fonts/Pacifico-Regular.svg#svgFontName) format('svg'); */
 }
 
 body{
     font-family: Avenir,'Lucida Sans Unicode',serif;
     font-style: italic;
-    background-color: salmon;
+    background-color: indianred;
     width: 100%;
     margin: 0;
 }
@@ -99,22 +99,7 @@ a:visited{
     color:transparent;
 }
 
-.btn {
 
-    text-indent: 5px;
-    border-radius: 15px;
-    color: transparent;
-    text-shadow: -4px 1px 4px rgba(7, 0, 11,1);
-    text-decoration: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    font-family: Avenir;
-    font-style: normal;
-    background-color: salmon;
-
-    margin-top: 5px;
-}
 #logo{
     text-align: center;
     font-family: Pacifico;
@@ -241,10 +226,11 @@ a:visited{
     border: none;
     font-family: Avenir;
     font-style: normal;
-    background-color: salmon;
+    background-color: indianred;
 
     margin-top: 5px;
 }
+
 #logo{
     text-align: center;
     font-family: Pacifico;
