@@ -150,8 +150,10 @@ color: floralwhite;
 font-weight: lighter;
     padding: 5px;
 }
-.commenterName{
-    background-color: black
+
+
+.disabled{
+
 }
 
 input{
@@ -160,7 +162,8 @@ height: 1em;
 }
 
 form{
-    width: 70%
+    /* width: 70% */
+    margin-right: 7vw;
 }
 
 #wrapper{
