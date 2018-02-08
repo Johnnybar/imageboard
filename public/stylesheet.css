@@ -27,19 +27,19 @@
         height: auto
     }
 }
-@font-face {
+/* @font-face {
 font-family: Avenir;
 src: url(/System/Library/Fonts/Avenir.ttc) format('TrueType Collection');
 src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
      url(/System/Library/Fonts/Avenir.woff2) format('woff2'); /* Super Modern Browsers */
-     url(/System/Library/Fonts/Avenir.woff) format('woff'); /* Pretty Modern Browsers */
-     url(/System/Library/Fonts/Avenir.ttf)  format('truetype'); /* Safari, Android, iOS */
-     url(/System/Library/Fonts/Avenir.svg#svgFontName) format('svg');
-}
+     /* url(/System/Library/Fonts/Avenir.woff) format('woff');
+     url(/System/Library/Fonts/Avenir.ttf)  format('truetype');
+     url(/System/Library/Fonts/Avenir.svg#svgFontName) format('svg'); */
+/* }  */
 
 
 body{
-    font-family: Avenir,'Lucida Sans Unicode',serif;
+    font-family: 'Roboto',sans-serif;
     font-style: italic;
     background-color: indianred;
     width: 100%;
@@ -101,7 +101,7 @@ a:visited{
 }
 
 .styleChange{
-    font-family: Avenir;
+    font-family: 'Roboto';
         background-color: indianred;
         font-style: normal;
         margin-left: -1px
@@ -207,7 +207,7 @@ ul {
     font-size: 1.2em;
     cursor: pointer;
     border: none;
-    font-family: Avenir;
+    font-family: 'Roboto';
     font-style: normal;
     background-color: indianred;
 
@@ -217,7 +217,7 @@ ul {
 
 
 .styleChange{
-    font-family: Avenir;
+    font-family: 'Roboto';
         background-color: indianred;
         font-style: normal;
         margin-left: -1px
