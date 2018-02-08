@@ -156,10 +156,8 @@ font-weight: lighter;
 
 }
 
-input{
-    width: 8em;
-height: 1em;
-}
+
+
 
 form{
     /* width: 70% */
@@ -264,5 +262,6 @@ font-weight: lighter;
 
 input{
     width: 8em;
-height: 1em;
+    height: 1em;
+    margin-left: 1vw;
 }
