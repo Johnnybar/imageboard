@@ -22,7 +22,6 @@ imageboard.controller('images', ($scope, $http) => {
   }
 
   $scope.submit = function() {
-    console.log('Pic submit is disabled for demo version');
     alert('Pic submit disabled in demo mode', 'ok');
   };
 });
@@ -41,7 +40,6 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location) => {
   };
 
   $scope.submitComment = function() {
-    console.log('Comment submit disabled for demo version');
     alert('Comment submit disabled in demo mode', 'ok');
   };
 
