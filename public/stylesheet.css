@@ -1,267 +1,220 @@
-
-
-@-webkit-keyframes lightUp  {
-    0%  {
-      background-color: floralwhite;
-      border: 1px solid transparent;
-
-
-    }
-
-    100%{
-        background-color: #882c2c;
-        border: 1px solid black;
-        box-shadow: 6 1px 14px 0px black;
-        color:floralwhite
-    }
-
+@-webkit-keyframes lightUp {
+  0% {
+    background-color: floralwhite;
+    border: 1px solid transparent;
+  }
+  100% {
+    background-color: #882c2c;
+    border: 1px solid black;
+    box-shadow: 6 1px 14px 0px black;
+    color: floralwhite
+  }
 }
 
 @-webkit-keyframes grow {
-    0% {
-        max-width: 10vw;
-    }
-
-    100% {
-        max-width: 100%;
-        height: auto
-    }
-}
-/* @font-face {
-font-family: Avenir;
-src: url(/System/Library/Fonts/Avenir.ttc) format('TrueType Collection');
-src: url(/System/Library/Fonts/Avenir.eot?#iefix) format('embedded-opentype');
-     url(/System/Library/Fonts/Avenir.woff2) format('woff2'); /* Super Modern Browsers */
-     /* url(/System/Library/Fonts/Avenir.woff) format('woff');
-     url(/System/Library/Fonts/Avenir.ttf)  format('truetype');
-     url(/System/Library/Fonts/Avenir.svg#svgFontName) format('svg'); */
-/* }  */
-
-
-body{
-    font-family: 'Roboto',sans-serif;
-    font-style: italic;
-    background-color: indianred;
-    width: 100%;
-    margin: 0;
+  0% {
+    max-width: 10vw;
+  }
+  100% {
+    max-width: 100%;
+    height: auto
+  }
 }
 
-#wrapper{
-    display: flex;
-    flex-wrap: wrap;
-        align-items: end;
 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  background-color: indianred;
+  width: 100%;
+  margin: 0;
 }
 
-.img{
-    width: 150px;
-    margin: 10px;
-    border-radius: 40px;
-    border: 1px solid black;
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.img {
+  width: 150px;
+  margin: 10px;
+  border-radius: 40px;
+  border: 1px solid black;
 }
 
 .imgBox {
-    padding: 12px;
-    display: flex;
-    width: 180px;
-    flex-direction: column;
-    border-radius: 45px;
-    box-shadow: 0 1px 14px 0px brown;
-    background-color: floralwhite;
-    margin-bottom: 20px;
-    margin-right: -15px;
-}
-
-.imgBox:hover{
-    animation: lightUp 0.5s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-
-ul {
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: #F4F1BB;
-
-}
-a:visited{
-    color:#F4F1BB;
-}
-
-
-#logo{
-    text-align: center;
-    font-family: 'Pacifico';
-    padding: 5px;
-    background-color: indianred;
-
-}
-
-.styleChange{
-    font-family: 'Roboto';
-        background-color: indianred;
-        font-style: normal;
-        margin-left: -1px
-}
-
-.imageLogoText{
-    color:floralwhite;
-    font-family: 'Pacifico';
-}
-
-
-
-.inputWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#titleAndDesc{
-    background-color: indianred;
-    width: 50%;
-        color: floralwhite;
-}
-
-.actualImage{
-    animation: grow 2s ease-in-out;
-}
-
-.commentsUp{
-margin-left: 20px
-}
-.commentsDown{
-margin-left: 20px;
-width: 50%
-}
-#comment-section{
-
-}
-.actualComment{
-
-    background-color: floralwhite;
-        padding: 5px;
-}
-
-.actualCommenter{
-color: floralwhite;
-font-weight: lighter;
-    padding: 5px;
-}
-
-
-.disabled{
-    margin-left: 16%;
-    background-color: black;
-}
-
-
-
-
-form{
-    /* width: 70% */
-    margin-right: 7vw;
-}
-
-#wrapper{
-    display: flex;
-    flex-wrap: wrap;
-        align-items: end;
-
-}
-
-.img{
-    width: 150px;
-    margin: 10px
-}
-
-/* .imgBox {
-    padding: 12px;
-    display: flex;
-    width: 180px;
-    flex-direction: column;
-    border-radius: 25px;
-    box-shadow: 0 1px 14px 0px brown;
-    background-color: floralwhite;
-    margin-bottom: 20px;
-    margin-right: -15px;
+  padding: 12px;
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  border-radius: 45px;
+  box-shadow: 0 1px 14px 0px brown;
+  background-color: floralwhite;
+  margin-bottom: 20px;
+  margin-right: -15px;
 }
 
 .imgBox:hover {
-    animation: colorChange 0.5s ease-in forwards;
-} */
+  animation: lightUp 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #F4F1BB;
+}
+
+a:visited {
+  color: #F4F1BB;
+}
+
+#logo {
+  text-align: center;
+  font-family: 'Pacifico';
+  padding: 5px;
+  background-color: indianred;
+}
+
+.styleChange {
+  font-family: 'Roboto';
+  background-color: indianred;
+  font-style: normal;
+  margin-left: -1px
+}
+
+.imageLogoText {
+  color: floralwhite;
+  font-family: 'Pacifico';
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#titleAndDesc {
+  background-color: indianred;
+  width: 50%;
+  color: floralwhite;
+}
+
+.actualImage {
+  animation: grow 2s ease-in-out;
+}
+
+.commentsUp {
+  margin-left: 20px
+}
+
+.commentsDown {
+  margin-left: 20px;
+  width: 50%
+}
+
+#comment-section {}
+
+.actualComment {
+  background-color: floralwhite;
+  padding: 5px;
+}
+
+.actualCommenter {
+  color: floralwhite;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.disabled {
+  margin-left: 16%;
+  background-color: black;
+}
+
+form {
+  /* width: 70% */
+  margin-right: 7vw;
+}
+
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.img {
+  width: 150px;
+  margin: 10px
+}
 
 
 ul {
-    list-style: none;
+  list-style: none;
 }
-
 
 .btn {
-
-    text-indent: 5px;
-    border-radius: 15px;
-    color: #F4F1BB;
-    text-decoration: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    font-family: 'Roboto';
-    font-style: normal;
-    background-color: indianred;
-
-    margin-top: 5px;
+  text-indent: 5px;
+  border-radius: 15px;
+  color: #F4F1BB;
+  text-decoration: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  background-color: indianred;
+  margin-top: 5px;
 }
 
-
-
-.styleChange{
-    font-family: 'Roboto';
-        background-color: indianred;
-        font-style: normal;
-        margin-left: -1px
+.styleChange {
+  font-family: 'Roboto';
+  background-color: indianred;
+  font-style: normal;
+  margin-left: -1px
 }
 
-.fileInpForm{
-    width: 80%;
+.fileInpForm {
+  width: 80%;
 }
 
-
-#titleAndDesc{
-    background-color: indianred;
-    width: 50%;
-        color: floralwhite;
+#titleAndDesc {
+  background-color: indianred;
+  width: 50%;
+  color: floralwhite;
 }
 
-.commentsUp{
-margin-left: 20px
-}
-.commentsDown{
-margin-left: 20px;
-width: 50%
-}
-#comment-section{
-
-}
-.actualComment{
-
-    background-color: floralwhite;
-    padding: 5px;
+.commentsUp {
+  margin-left: 20px
 }
 
-.actualCommenter{
-color: floralwhite;
-font-weight: lighter;
-    padding: 5px;
-}
-.commenterName{
-    background-color: black
+.commentsDown {
+  margin-left: 20px;
+  width: 50%
 }
 
-input{
-    width: 8em;
-    height: 1em;
-    margin-left: 1vw;
+#comment-section {}
+
+.actualComment {
+  background-color: floralwhite;
+  padding: 5px;
+}
+
+.actualCommenter {
+  color: floralwhite;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.commenterName {
+  background-color: black
+}
+
+input {
+  width: 8em;
+  height: 1em;
+  margin-left: 1vw;
 }

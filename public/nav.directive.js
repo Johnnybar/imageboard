@@ -6,7 +6,6 @@ angular.module('app.nav', [])
             restrict: 'E',
             controller: function($scope){
                 $scope.showClick = function(e){
-                    // console.log(e.currentTarget);
                 };
             }
         };

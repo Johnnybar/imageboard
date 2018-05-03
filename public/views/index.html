@@ -2,45 +2,45 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Image Board</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="nav.directive.js"></script>
-    <script src="script.js"></script>
-    <script src="routes.js"></script>
-    <script src="/wow-alert.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
-    <link rel="stylesheet" href="/stylesheet.css">
-    <link rel="stylesheet" href="/wow-alert.css">
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' >
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type='text/css'>
+  <meta charset="utf-8">
+  <title>Image Board</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="nav.directive.js"></script>
+  <script src="script.js"></script>
+  <script src="routes.js"></script>
+  <script src="/wow-alert.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+  <link rel="stylesheet" href="/stylesheet.css">
+  <link rel="stylesheet" href="/wow-alert.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type='text/css'>
 
 </head>
 
 <body ng-app="imageboard">
-    <gt-nav></gt-nav>
-<h1 id='logo'><span class='imageLogoText'>Image</span><span class='styleChange btn'>Bunker</span></h1>
-    <div ng-controller="images">
-        <div class="inputWrapper">
+  <gt-nav></gt-nav>
+  <h1 id='logo'><span class='imageLogoText'>Image</span><span class='styleChange btn'>Bunker</span></h1>
+  <div ng-controller="images">
+    <div class="inputWrapper">
 
-        <form method="post" ng-submit="submit()" >
-            <input ng-model="file" type="file" name="file" id='file' style="visibility:hidden;">
-            <label for="file" class='btn'>Select Image</label>
-            <input ng-model="title" type="text" name="title" placeholder="Title">
-            <input ng-model="user" type="text" name="user" placeholder="User">
-            <input ng-model='desc' type="text" name="desc" placeholder="Description">
-            <button type="submit" name="button" class= 'btn'>Upload</button>
-            <h4 class='disabled' style='color:white; text-align:center'>
+      <form method="post" ng-submit="submit()">
+        <input ng-model="file" type="file" name="file" id='file' style="visibility:hidden;">
+        <label for="file" class='btn'>Select Image</label>
+        <input ng-model="title" type="text" name="title" placeholder="Title">
+        <input ng-model="user" type="text" name="user" placeholder="User">
+        <input ng-model='desc' type="text" name="desc" placeholder="Description">
+        <button type="submit" name="button" class='btn'>Upload</button>
+        <h4 class='disabled' style='color:white; text-align:center'>
                 Pic submit disabled for demo version
             </h4>
-        </form>
+      </form>
 
-        </div>
+    </div>
 
-<div ui-view="main">
-</div>
-</div>
+    <div ui-view="main">
+    </div>
+  </div>
 
 
 </body>

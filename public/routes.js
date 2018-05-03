@@ -11,7 +11,6 @@ angular.module('app.routes', ['ui.router'])
                 }
             })
 
-
             .state('singleImg',{
                 url: '/singleImg/:imgId',
                 views: {
