@@ -79,7 +79,7 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location) => {
         obj.comment = commentArr[i].slice(0, commentArr[i].indexOf('.')).replace(/[^a-zA-Z ]/g, "")
         allCommentObj.push(obj)
       }
-      console.log(allCommentObj);
+      // console.log(allCommentObj);
       
       $scope.comments = allCommentObj;
     });
