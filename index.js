@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const s3 = require('./s3');
+// const s3 = require('./s3');
 var multer = require('multer');
 var uidSafe = require('uid-safe');
 var path = require('path');
 const db = require("./sql/db.js");
+const fetch = require('node-fetch');
 
 //Multer config
 
@@ -51,12 +52,14 @@ app.post('/upload', uploader.single('file'), function(req, res, next) {
 });
 
 app.get('/singleImg/:id', (req, res) => {
-  const id = req.params.id;
-  db.getImageById(id).then((results) => {
-    res.json(results);
-  }).catch((err) => {
-    console.log(err);
-  });
+  const id = req.params.id
+ res.json(id)
+  
+  // db.getImageById(id).then((results) => {
+  //   res.json(results);
+  // }).catch((err) => {
+  //   console.log(err);
+  // });
 });
 
 app.post('/comment/:imageId', (req, res) => {
@@ -82,6 +85,8 @@ app.get('/comment/:imageId', (req, res) => {
 
 app.get('/images', (req, res) => {
   db.getImageUrls().then(results => {
+    // console.log(results, 'in appget images');
+    
     res.json(results);
   });
 });

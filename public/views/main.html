@@ -1,10 +1,15 @@
+
 <div id="container">
   <ul id='wrapper' ng-if="images.length > 0">
-    <div ng-repeat="image in images | limitTo:limit" class='imgBox'><a ui-sref='singleImg({ imgId: {{image.id}}})'><img draggable="true" class='img' src="{{image.image}}"></a>
+    <div ng-repeat="image in images track by $index| limitTo:10" class='imgBox'>
+      <a ui-sref='singleImg({ imgId: "{{image.picture.large}}"})'>
+        <img
+          draggable="true" class='img' src="{{image.picture.medium}}" />
+        </a>
       <div class='descBox'>
-        <h5 style='font-weight: lighter'>Submitted By: {{image.username}}</h5>
-        <h4 style='font-weight: bold'>{{image.title}}</h4>
-        <h5 style='font-weight: lighter'>{{image.description | limitTo: 60}}</h5>
+        <h5 style='font-weight: lighter'>Submitted By: {{image.email}}</h5>
+        <h4 style='font-weight: bold'>{{image.name.first}}  {{image.name.last}}</h4>
+        <h5 style='font-weight: lighter'>{{image.location.city | limitTo: 10}}</h5>
       </div>
     </div>
 

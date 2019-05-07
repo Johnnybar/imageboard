@@ -2,23 +2,33 @@
 const s3 = require("../config.json");
 var spicedPg = require('spiced-pg');
 let dbUrl;
+const fetch = require('node-fetch');
+
+let userInfo = {
+  username: 'user',
+  password: 'pass'
+}
+
 
 if (process.env.DATABASE_URL) {
   dbUrl = process.env.DATABASE_URL;
 } else {
-  var userInfo = require('../secrets.json');
+  // var userInfo = require('../secrets.json');
   var user = userInfo.username;
   var pass = userInfo.password;
-  dbUrl = `postgres:${user}:${pass}psql@localhost:5432/imageboard`;
+  // dbUrl = `postgres:${user}:${pass}psql@localhost:5432/imageboard`;
 }
-var db = spicedPg(dbUrl);
+// var db = spicedPg(dbUrl);
 
 exports.getImageUrls = function() {
-  return db.query(`SELECT * FROM images`).then((results) => {
-    results.rows.forEach(elem => {
-      elem.image = s3.s3Url + elem.image;
-    });
-    return results.rows;
+  console.log('here');
+   return fetch('https://randomuser.me/api/?results=20').then((results) => {
+     
+    // results.rows.forEach(elem => {
+    //   elem.image = s3.s3Url + elem.image;
+    // });
+    // return results.rows;
+    return results.text()
   }).catch((err) => {
     console.log(err);
   });
@@ -32,12 +42,18 @@ exports.insertImages = function(image, username, title, description) {
   });
 };
 
-exports.getImageById = function(id) {
-  return db.query(`SELECT * from images where id = $1`, [id]).then((results) => {
-    return results.rows;
-  });
+// exports.getImageById = function(id, index) {
 
-};
+//         // results.rows.forEach(elem => {
+//         //   elem.image = s3.s3Url + elem.image;
+//         // });
+//         // return results.rows;
+//     
+//   // return db.query(`SELECT * from images where id = $1`, [id]).then((results) => {
+//   //   return results.rows;
+//   });
+
+// };
 
 exports.insertComments = function(username, comment, imageId) {
   return db.query('INSERT INTO comments (username, comment, imageId) VALUES ($1, $2, $3)', [username, comment, imageId]).then((results) => {

@@ -4,7 +4,7 @@ let secrets;
 if (process.env.NODE_ENV == 'production') {
   secrets = process.env;
 } else {
-  secrets = require('./secrets.json');
+  // secrets = require('./secrets.json');
 }
 const client = knox.createClient({
   key: process.env.KEY1 || secrets.AWS_KEY,
