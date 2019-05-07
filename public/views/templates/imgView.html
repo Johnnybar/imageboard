@@ -3,6 +3,7 @@
   <h1>Behold, an image!</h1>
 
   <img draggable="true" alt='clickedimage' src='{{clickedImg}}'>
+
   <!-- <div id="titleAndDesc">
     <h4>{{clickedImg.email}}</h4>
     <h5>Uploaded by: {{clickedImg.name.first}} {{clickedImg.name.last}}</h5>
@@ -11,7 +12,9 @@
 </div>
 
 <div ng-controller='comments' class='commentsDown'>
-
+ <div ng-repeat='comment in comments | limitTo:1'> 
+  <!-- <h4>#{{comment.description}}</h4> -->
+ </div> 
   <form method="post" ng-submit="submitComment()">
     <input ng-model="username" type="text" name="user" placeholder="Name">
     <input ng-model="comment" type="text" name="comment" placeholder="Comment">
