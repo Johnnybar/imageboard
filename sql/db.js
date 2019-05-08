@@ -21,7 +21,6 @@ if (process.env.DATABASE_URL) {
 // var db = spicedPg(dbUrl);
 
 exports.getImageUrls = function() {
-  console.log('here');
    return fetch('https://randomuser.me/api/?results=20').then((results) => {
      
     // results.rows.forEach(elem => {

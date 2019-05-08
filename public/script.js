@@ -1,6 +1,7 @@
 var imageboard = angular.module('imageboard', ["app.routes", "ui.router", 'app.nav']);
 location.hash = '/home';
 
+
 //Display images
 
 imageboard.controller('images', ($scope, $http) => {
@@ -29,7 +30,7 @@ imageboard.controller('images', ($scope, $http) => {
       $scope.file = {};
       $scope.desc = '';
     });
-  }
+  } 
 
   $scope.submit = function () {
     alert('Pic submit disabled in demo mode', 'ok');
@@ -58,31 +59,46 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location) => {
   };
 
   function getComments() {
-    $http.get("https://litipsum.com/api/15/p/json").then(function (resp) {
-      let text = resp.data.text.join()
+    let randomText = [];
+    $http.get("https://litipsum.com/api/15").then(function (resp) {
 
-      let allCommentObj = []
-      let commentArr = []
-
-      let parArr = text.split('<p>', 10)
-      for (const arr of parArr) {
-        let newArr = arr.split("</p>").shift()
-        commentArr.push(newArr)
+      for (const char in resp.data) {
+        if (resp.data[char] === '.' && char > 5) {
+          randomText = resp.data.slice(0, char)
+          break;
+        }
       }
 
-      for (let i = 1; i < commentArr.length; i++) {
-        let obj = {}
+      // randomText = resp.data.slice(0,10)
 
-        obj.name = commentArr[i].slice(8, 13).replace(/[^a-zA-Z0-9]/g, '').split().reverse().join() + commentArr[i].slice(20, 27).replace(/[^a-zA-Z0-9]/g, '')
-        obj.name = obj.name[0].toUpperCase() + obj.name.slice(1)
-        obj.description = commentArr[i < 3 ? 2 : 4].slice(0, 16).toUpperCase().replace(/[^a-zA-Z ]/g, "")
-        obj.comment = commentArr[i].slice(0, commentArr[i].indexOf('.')).replace(/[^a-zA-Z ]/g, "")
-        allCommentObj.push(obj)
-      }
-      // console.log(allCommentObj);
-      
-      $scope.comments = allCommentObj;
-    });
+    }).then(() => {
+
+      $http.get("https://litipsum.com/api/15/p/json").then(function (resp) {
+        let text = resp.data.text.join()
+
+        let allCommentObj = []
+        let commentArr = []
+
+        let parArr = text.split('<p>', 10)
+        for (const arr of parArr) {
+          let newArr = arr.split("</p>").shift()
+          commentArr.push(newArr)
+        }
+
+        for (let i = 1; i < commentArr.length; i++) {
+          let obj = {}
+
+          obj.name = commentArr[i].slice(8, 13).replace(/[^a-zA-Z0-9]/g, '').split().reverse().join() + commentArr[i].slice(20, 27).replace(/[^a-zA-Z0-9]/g, '')
+          obj.name = obj.name[0] ? obj.name[0].toUpperCase() + obj.name.slice(1) : 'James'
+          // obj.description = commentArr[i < 3 ? 2 : 4].slice(0, 16).toUpperCase().replace(/[^a-zA-Z ]/g, "")
+          obj.description = randomText + '.'
+          obj.comment = commentArr[i].slice(0, commentArr[i].indexOf('.')).replace(/[^a-zA-Z ]/g, "")
+          allCommentObj.push(obj)
+        }
+
+        $scope.comments = allCommentObj;
+      });
+    })
   }
   getComments();
 });

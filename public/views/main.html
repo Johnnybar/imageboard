@@ -4,7 +4,7 @@
     <div ng-repeat="image in images track by $index| limitTo:10" class='imgBox'>
       <a ui-sref='singleImg({ imgId: "{{image.picture.large}}"})'>
         <img
-          draggable="true" class='img' src="{{image.picture.medium}}" />
+          draggable="true" class='img' src="{{image.picture.large}}" />
         </a>
       <div class='descBox'>
         <h5 style='font-weight: lighter'>Submitted By: {{image.email}}</h5>

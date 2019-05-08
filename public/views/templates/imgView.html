@@ -1,8 +1,8 @@
 <div ng-controller='photos' class='commentsUp'>
 
-  <h1>Behold, an image!</h1>
+  <h1>What do you think?</h1>
 
-  <img draggable="true" alt='clickedimage' src='{{clickedImg}}'>
+  <img draggable="true" alt='clickedimage' class="single-img" src='{{clickedImg}}'>
 
   <!-- <div id="titleAndDesc">
     <h4>{{clickedImg.email}}</h4>
@@ -13,7 +13,7 @@
 
 <div ng-controller='comments' class='commentsDown'>
  <div ng-repeat='comment in comments | limitTo:1'> 
-  <!-- <h4>#{{comment.description}}</h4> -->
+  <h4 class="user-description">#{{comment.description}}</h4>
  </div> 
   <form method="post" ng-submit="submitComment()">
     <input ng-model="username" type="text" name="user" placeholder="Name">
