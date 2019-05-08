@@ -15,7 +15,6 @@
   100% {
     background-color: var(--text-bg-color);
     border: 1px solid transparent;
-    box-shadow: 6 1px 14px 0px black;
     color: var(--white)
   }
 }
@@ -232,6 +231,7 @@ input {
 .single-img{
   border-radius: 50%;
   width: 100%;
+  order: 10px solid var(--white);
 }
 
 .single-page-view{
@@ -248,3 +248,32 @@ input {
   .white{
     color: var(--white)!important
   }
+
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid var(--text-color);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+  blockquote:before {
+    color: var(--main-bg-color);
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  blockquote p {
+    display: inline;
+  }
+   blockquote:after {
+     color: var(--main-bg-color);
+     content: close-quote;
+     font-size: 4em;
+     line-height: 0.1em;
+     margin-right: 0.25em;
+     vertical-align: -0.4em;
+   }

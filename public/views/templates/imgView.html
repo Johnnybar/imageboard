@@ -1,6 +1,6 @@
 <div ng-controller='photos' class='commentsUp'>
 
-  <h1>What do you think?</h1>
+  <h1>My Favourite Quote</h1>
 
   <img draggable="true" alt='clickedimage' class="single-img" src='{{clickedImg}}'>
 
@@ -13,7 +13,9 @@
 
 <div ng-controller='comments' class='commentsDown'>
  <div ng-repeat='comment in comments | limitTo:1'> 
-  <h4 class="user-description">#{{comment.description}}</h4>
+  <blockquote class="user-description">
+    <p> #{{comment.description}}</p>
+  </blockquote>
  </div> 
   <form method="post" ng-submit="submitComment()">
     <input ng-model="username" type="text" name="user" placeholder="Name">

@@ -1,15 +1,15 @@
 
 <div id="container">
   <ul id='wrapper' ng-if="images.length > 0">
-    <div ng-repeat="image in images track by $index| limitTo:10" class='imgBox'>
+    <div ng-repeat="image in images track by $index" class='imgBox'>
       <a ui-sref='singleImg({ imgId: "{{image.picture.large}}"})'>
         <img
           draggable="true" class='img' src="{{image.picture.large}}" />
         </a>
       <div class='descBox'>
         <h5 style='font-weight: lighter'>Submitted By: {{image.email}}</h5>
-        <h4 style='font-weight: bold'>{{image.name.first}}  {{image.name.last}}</h4>
-        <h5 style='font-weight: lighter'>{{image.location.city | limitTo: 10}}</h5>
+        <h4 style='font-weight: bold'>{{image.name.first.toUpperCase()}} {{image.name.last.toUpperCase()}}</h4>
+        <h5 style='font-weight: lighter'>{{image.location.city.toUpperCase() | limitTo: 10}}</h5>
       </div>
     </div>
 

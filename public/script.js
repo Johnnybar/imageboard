@@ -8,23 +8,24 @@ imageboard.controller('images', ($scope, $http) => {
 
 
   getImages();
-  $scope.message = 'Here are the images:';
-
+  
   function getImages() {
     $http.get("/images").then(function (resp) {
       // console.log(JSON.parse(resp.data));
-
+      
       $scope.images = JSON.parse(resp.data).results
-      $scope.seeds = JSON.parse(resp.data).info
+      $scope.limit = 5;
+      $scope.limitUp = function () {
+        // console.log('in liimit up');
+        
+        $scope.limit += 10;
+      };
+      // $scope.seeds = JSON.parse(resp.data).info
       // $scope.imageSeeds= JSON.parse(resp.data).info
-      $scope.limit = 20;
       // let str = $scope.images
       // let obj = JSON.parse(str)
       // console.log('in getimages in script', JSON.parse(resp.data));
 
-      $scope.limitUp = function () {
-        $scope.limit += 10;
-      };
       $scope.title = '';
       $scope.user = '';
       $scope.file = {};
