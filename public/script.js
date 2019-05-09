@@ -6,36 +6,28 @@ location.hash = '/home';
 
 imageboard.controller('images', ($scope, $http) => {
 
+  $scope.limit = 5;
+  $scope.limitUp = function () {    
+    $scope.limit += 10;
+    getImages()
+  };
 
-  getImages();
-  
+  let currentImages =[];
   function getImages() {
     $http.get("/images").then(function (resp) {
-      // console.log(JSON.parse(resp.data));
-      
-      $scope.images = JSON.parse(resp.data).results
-      $scope.limit = 5;
-      $scope.limitUp = function () {
-        // console.log('in liimit up');
-        
-        $scope.limit += 10;
-      };
-      // $scope.seeds = JSON.parse(resp.data).info
-      // $scope.imageSeeds= JSON.parse(resp.data).info
-      // let str = $scope.images
-      // let obj = JSON.parse(str)
-      // console.log('in getimages in script', JSON.parse(resp.data));
-
+      currentImages = currentImages.concat(JSON.parse(resp.data).results.slice(0, $scope.limit));
+      $scope.images =  currentImages
       $scope.title = '';
       $scope.user = '';
       $scope.file = {};
       $scope.desc = '';
     });
   } 
-
+  
   $scope.submit = function () {
     alert('Pic submit disabled in demo mode', 'ok');
   };
+  getImages();
 });
 
 imageboard.controller('photos', ($scope, $http, $location) => {
@@ -48,6 +40,7 @@ imageboard.controller('photos', ($scope, $http, $location) => {
   });
 });
 
+let currentDescription;
 imageboard.controller('comments', ($scope, $http, $stateParams, $location) => {
 
   $scope.limit = 4;
@@ -56,48 +49,61 @@ imageboard.controller('comments', ($scope, $http, $stateParams, $location) => {
   };
 
   $scope.submitComment = function () {
-    alert('Comment submit disabled in demo mode', 'ok');
+
+    const newCommentObj = {
+      name: $scope.username,
+      comment: $scope.comment,
+      description: currentDescription
+    }
+
+    $scope.comments = $scope.comments.concat(newCommentObj);
+    var temp = $scope.comments[0];
+    $scope.comments[0] = $scope.comments[$scope.comments.length - 1];
+    $scope.comments[$scope.comments - 1] = temp;
+    
+    $scope.username = '';
+    $scope.comment = ''
+    // alert('Comment submit disabled in demo mode', 'ok');
   };
 
   function getComments() {
     let randomText = [];
     $http.get("https://litipsum.com/api/15").then(function (resp) {
-
+      
       for (const char in resp.data) {
         if (resp.data[char] === '.' && char > 5) {
           randomText = resp.data.slice(0, char)
           break;
         }
       }
-
-      // randomText = resp.data.slice(0,10)
-
+      
     }).then(() => {
-
+      
       $http.get("https://litipsum.com/api/15/p/json").then(function (resp) {
         let text = resp.data.text.join()
-
+        
         let allCommentObj = []
         let commentArr = []
-
+        
         let parArr = text.split('<p>', 10)
         for (const arr of parArr) {
           let newArr = arr.split("</p>").shift()
           commentArr.push(newArr)
         }
-
+        
         for (let i = 1; i < commentArr.length; i++) {
           let obj = {}
-
+          
           obj.name = commentArr[i].slice(8, 13).replace(/[^a-zA-Z0-9]/g, '').split().reverse().join() + commentArr[i].slice(20, 27).replace(/[^a-zA-Z0-9]/g, '')
           obj.name = obj.name[0] ? obj.name[0].toUpperCase() + obj.name.slice(1) : 'James'
-          // obj.description = commentArr[i < 3 ? 2 : 4].slice(0, 16).toUpperCase().replace(/[^a-zA-Z ]/g, "")
           obj.description = randomText + '.'
+          currentDescription = obj.description;
           obj.comment = commentArr[i].slice(0, commentArr[i].indexOf('.')).replace(/[^a-zA-Z ]/g, "")
           allCommentObj.push(obj)
         }
-
+        
         $scope.comments = allCommentObj;
+        
       });
     })
   }
