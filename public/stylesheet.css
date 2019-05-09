@@ -10,7 +10,6 @@
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0
-    /* border: 1px solid transparent; */
   }
 
   100% {
@@ -20,7 +19,6 @@
 @-webkit-keyframes lightUp {
   0% {
     background-color: white;
-    /* border: 1px solid transparent; */
   }
   100% {
     background-color: var(--text-bg-color);
