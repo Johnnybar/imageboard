@@ -300,7 +300,8 @@ input#hidden-input{
    .descBox{
         text-align: center;
         background-color: white;
-        clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 70%);
+        clip-path: url("#clipPolygon");
+        -webkit-clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 70%);
         margin-top: -2em;
         margin-left: -3em;
         /* margin-top: 7em; */
